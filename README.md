@@ -6,6 +6,8 @@
     - [Desenvolvimento Web](./Eixo-1/desenvolvimento-web/README.md)
 - [Eixo 2](./Eixo-2/)
     - [Design de Interação](./Eixo-2/Design-interativo/README.md)
+    - [Engenharia de Requisitos de Software](./Eixo-2/Eng-requisitos-software/README.md)
+    - [Programação Modular](./Eixo-2/Programacao-modular/)
 
 .
 .
