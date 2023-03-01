@@ -33,10 +33,10 @@ há a participação do usuário. Essa abordagem envolve o uso de técnicas como
     
 ### ESCALA DE SEVERIDADE DE PROBLEMAS
     
-    - Cosmético - só precisa de houver tempo
-    - Pequeno - Deve ser resolvido, mas pode receber baixa prioridade
-    - Grande - Deve ser resolvido e deve receber alta prioridade, pois prejudica fatores de usabilidade importantes
-    - Catastrófico - É extremamente importante que seja resolvido, pois o problema impede que o usuário atinja o objetivo por meio do sistema
+- Cosmético - só precisa de houver tempo
+- Pequeno - Deve ser resolvido, mas pode receber baixa prioridade
+- Grande - Deve ser resolvido e deve receber alta prioridade, pois prejudica fatores de usabilidade importantes
+- Catastrófico - É extremamente importante que seja resolvido, pois o problema impede que o usuário atinja o objetivo por meio do sistema
 
 ### Avaliação do Percurso Cognitivo 
 é um método de avaliação por inspeção. Ela se baseia em um conjunto de 4 questões, sendo que cada questão é um aspecto cognitivo do usuário que deseja investigar se o sistema contempla. 
