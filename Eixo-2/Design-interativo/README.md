@@ -45,7 +45,7 @@ Esse método busca avaliar a facilidade de aprendizado - **Aprender fazendo** - 
 
 Para execução da avaliação, deve-se seguir o **protocolo de preparação**, coleta de dados, interpretação, consolidação e relato dos resultados. 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f7326c14-f097-488e-94ae-353635c341d0/Untitled.png)
+![image](https://user-images.githubusercontent.com/70844369/222143119-349420fc-4329-424d-8c9c-5e52294780de.png)
 
 As 4 questões do método de Avaliação do Percurso Cognitivo são:
 
