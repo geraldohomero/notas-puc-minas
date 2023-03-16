@@ -151,3 +151,59 @@ Produto produto1 = new Produto();
 
 Produto produto2 = new Produto("Leite", 3.59F, 12);
 ```
+
+## Atributos estáticos e propriedades
+
+### Membro estático
+
+O `escopo` de uma variável descreve a região do código em que aquela variável pode ser acessada. O termo escopo é também comumente chamado como visibilidade da variável, pois compreende a parte do código em que uma variável é “reconhecida” pelo programa.
+
+Um membro estático é definido como um membro com `tempo de vida global, e escopo local`. São atributos ou métodos que são comuns a todos os objetos de uma classe. Quando declaramos um atributo ou método estático, ele passa a ser um membro de classe, e é compartilhado por todos os objetos daquela classe.
+
+>Suponha que desejamos adicionar um novo atributo à classe Produto, que consiste em um código que é incrementado a cada vez que uma nova instância de Produto é criada. Iremos utilizar atributos estáticos para resolver este problema.
+
+```csharp
+class Produto 
+{
+  public int id;
+  public string descricao;
+  public float preco;
+  public int quantidade;
+
+  public static int contador;
+
+  public Produto(String descricao, float preco, int quantidade) 
+  {
+    this.id = ++Produto.contador;
+
+    if (descricao.Length >= 3)
+      this.descricao = descricao;
+    if (preco > 0)
+      this.preco = preco;
+    if (quantidade >= 0)
+      this.quantidade = quantidade;
+  }
+
+  public Produto() 
+  {
+    this.id = ++Produto.contador;
+    this.descricao = "Novo Produto";
+    this.preco = 0.01F;
+    this.quantidade = 0;
+  }
+
+  public bool emEstoque() 
+  {
+    return (quantidade > 0);
+  }
+}
+```
+Como um atributo estático pertence ao escopo da classe, sempre que quisermos acessá-lo devemos referenciá-lo a partir da classe:
+
+```csharp 
+Console.WriteLine("Contador de produtos: {0}", Produto.contador);
+```
+
+[Exemplo](./code/5-contadorStatic.cs)
+
+
