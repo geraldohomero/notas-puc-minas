@@ -496,3 +496,9 @@ class Aluno : Pessoa  // classe Aluno é um tipo de Pessoa
 
 }
 ```
+
+## Construtores em classe filha
+
+Uma das etapas para construir um objeto de uma classe filha é construir os elementos herdados da classe pai. Para garantir que o sistema seja robusto e correto, o método construtor da classe pai deve ser executado antes do construtor da classe filha.
+
+Se a classe filha não definir um construtor próprio, o construtor padrão sem parâmetros da classe pai será executado automaticamente. No entanto, é possível declarar um construtor na classe filha que inicialize tanto os atributos da classe filha quanto os atributos herdados da classe pai.Os dois pontos (`:`) seguido da palavra-chave base e a lista de parâmetros invocam o construtor da classe pai. 
