@@ -295,7 +295,7 @@ class MainClass
 
 Encapsulamento e o princípio da caixa preta: Um módulo deve consistir de um conjunto de comandos com uma função bem definida, e o mais independente possível em relação ao resto do sistema.
 
-`Independência funcional`: Cada módulo deve cuidar de uma função específica, servindo a um propósito específico. 
+`Independência funcional`: Cada módulo deve cuidar de uma função específica, servindo a um propósitto específico. 
 
 `Coesão`: Atributo de um módulo em que todas as suas partes estão ligadas umas às outras. Em software, todas as partes estão coerentemente relacionadas. O objetivo de um módulo em programação modular é obter alta coesão interna.
 
@@ -365,3 +365,38 @@ class Produto
 >Na dúvida, coloque tudo no `private` e libere quando necessário
 - Use private a menos que haja uma boa razão para não o fazer.
 - Evite campos public exceto para `constantes`. Campos públicos aumentam o acoplamento em relação a uma implementação específica e reduz a flexibilidade do sistema a mudanças.
+
+## Métodos de acesso
+
+Métodos de acesso são criados para permitir que os usuários de uma classe possam acessar os valores dos atributos, sem expor os atributos à possíveis atribuições de valores inválidos. 
+
+Esses métodos são chamados de **getters** e **setters**.
+
+- Métodos **`get`**: acessam o valor de um atributo privado. Eventualmente, os valores podem ser tratados antes de serem exibidos.
+
+Por exemplo: um atributo booleano pode ser exibido como V ou F, e um atributo numérico pode ser retornado no formato string correspondente.
+
+- Métodos **`set`**: atribuem um valor a um atributo privado. Os valores passados como argumento devem ser validados/tratados antes de serem atribuídos.
+
+Exemplo:
+
+```csharp
+private float preco;
+```
+
+Método de acesso:
+
+```csharp
+public float GetPreco()
+{
+  return preco;
+}
+
+public void SetPreco(float preco)
+{
+  if (preco > 0)
+  {
+    this.preco = preco;
+  }
+}
+```
