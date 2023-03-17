@@ -291,6 +291,77 @@ class MainClass
   }
 }
 ```
+## Princípio da ocultação da informação
+
+Encapsulamento e o princípio da caixa preta: Um módulo deve consistir de um conjunto de comandos com uma função bem definida, e o mais independente possível em relação ao resto do sistema.
+
+`Independência funcional`: Cada módulo deve cuidar de uma função específica, servindo a um propósito específico. 
+
+`Coesão`: Atributo de um módulo em que todas as suas partes estão ligadas umas às outras. Em software, todas as partes estão coerentemente relacionadas. O objetivo de um módulo em programação modular é obter alta coesão interna.
+
+`Acoplamento`: Medida da interconexão entre os elementos de software. A dependência pode ser medida pela quantidade de conexões entre os módulos de um sistema. A situação ideal é que um sistema possua baixo acoplamento.
+
+`Sistema modular bem implementado = alta coesão interna e baixo acoplamento`
+
+Indicadores de baixo acoplamento
+
+- Tamanho: quantidade de parâmetros e métodos públicos.
+- Visibilidade: uso de parâmetros x uso de variáveis globais.
+- Flexibilidade: facilidade na chamada
+
+ 
+### Modificadores de acesso
+
+Vários níveis de acesso podem ser atribuídos aos atributos e métodos de uma classe. Em C#, os três níveis mais comuns de acesso são: privado, protegido e público. Esses níveis são definidos a partir de modificadores de acesso, que são palavras-chave da linguagem que são adicionadas na declaração destes membros de classe.
+
+`Privado` (modificador de acesso `private`)
+
+>Membros declarados com acesso privado são acessíveis apenas na própria classe.
+
+`Protegido` (modificador de acesso `protected`)
+
+>Membros declarados com acesso protegido são acessíveis na própria classe e adicionalmente por suas subclasses (ou classes filha).
+
+`Público` (modificador de acesso `public`)
+
+>Membros declarados com acesso público são acessíveis de qualquer lugar do programa.
 
 
+>>>>>>O `nível de acesso padrão` para membros da classe é privado quando nenhum modificador de acesso é especificado.
 
+
+```csharp
+class Produto 
+{
+  private int id;
+  private string descricao;
+  private float preco;
+  private int quantidade;
+
+  private static int contador = 0;
+  private static int instancias = 0;
+
+  public Produto(String descricao, float preco, int quantidade) 
+  {…
+  } 
+
+  public Produto() 
+  {…
+  }
+
+  ~Produto() 
+  {…
+  }
+
+  public bool emEstoque() 
+  {…
+  }
+}
+```
+
+### Regras de encapsulamento
+
+- Use o nível de acesso mais restrito e que faça sentido para um membro particular.
+>Na dúvida, coloque tudo no `private` e libere quando necessário
+- Use private a menos que haja uma boa razão para não o fazer.
+- Evite campos public exceto para `constantes`. Campos públicos aumentam o acoplamento em relação a uma implementação específica e reduz a flexibilidade do sistema a mudanças.
