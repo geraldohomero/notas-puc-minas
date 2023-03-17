@@ -428,3 +428,9 @@ public float Preco { get; set; }
 ```
 
 retorna o valor de `preco` e inicializa o `preco` com o valor do argumento `value`, sem verificar se este valor é válido.
+
+## Namespaces
+
+Namespaces, ou espaço de nomes, é um recurso que permite agrupar classes relacionadas em uma unidade lógica maior, criando módulos mais complexos. Muitas vezes, os namespaces são utilizados para a criação de bibliotecas de código (code libraries).
+
+Por convenção, quando se deseja **criar** seu próprio **namespace**, todas as **classes** de um mesmo namespace devem ser **armazenadas** na **mesma pasta**, em arquivos separados onde **cada arquivo** possui o mesmo **nome da classe** nele contido. O **nome da pasta** deve ser o mesmo **nome do namespace**.
