@@ -7,3 +7,4 @@ public partial class ClasseParcial
     Console.WriteLine("Eu estou " + this.tarefa);
   }
 }
+

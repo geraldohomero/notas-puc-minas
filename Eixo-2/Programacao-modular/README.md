@@ -458,4 +458,4 @@ ClasseParcial1.cs
 
 ClasseParcial2.cs
 
->>Classes parciais tem de estar dentro de um mesmo namespace
+>>Classes parciais tem de estar dentro de um mesmo namespace (que seria como o sobrenome da classe)
