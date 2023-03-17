@@ -358,7 +358,7 @@ class Produto
   }
 }
 ```
-
+[Exemplo completo](./code/7-produtoComEncapsulamento.cs)
 ### Regras de encapsulamento
 
 - Use o nível de acesso mais restrito e que faça sentido para um membro particular.
