@@ -400,3 +400,31 @@ public void SetPreco(float preco)
   }
 }
 ```
+
+## Propriedades
+
+As propriedades permitem a exposição pública de atributos, ao mesmo tempo em que permitem a implementação flexível e com menos linhas de código dos métodos de acesso.
+
+As `propriedades` podem ter os seguintes métodos:
+
+- **`init`**: atribui um valor inicial ao atributo no momento da criação do objeto.
+
+- **`set`**: atribui um novo valor ao atributo enquanto verifica a validade do valor a ser atribuído.
+
+- **`get`**: retorna o valor do atributo, diretamente, ou após processamento ou formatação.
+
+```csharp
+public float Preco { // propriedade com PascalCase
+  get { return preco; }
+  set { if (value > 0) preco = value; } // value representa o valor 
+                                        // passado ao método de acesso set
+}
+```
+
+As propriedades possuem métodos assessores padrão que não fazem nenhuma validação ou transformação de dados:
+
+```csharp
+public float Preco { get; set; }
+```
+
+retorna o valor de `preco` e inicializa o `preco` com o valor do argumento `value`, sem verificar se este valor é válido.
