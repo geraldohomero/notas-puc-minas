@@ -459,3 +459,40 @@ ClasseParcial1.cs
 ClasseParcial2.cs
 
 >>Classes parciais tem de estar dentro de um mesmo namespace (que seria como o sobrenome da classe)
+
+## Generalização e Especificação
+
+-  A especificação é um processo *top-down* (de cima para baixo), em que uma classe mais específica é derivada de uma classe mais genérica.
+-  A generalização ou abstração é um processo *bottom-up* (de baixo para cima), em que uma classe mais genérica é construída a partir dos elementos comuns de classes mais específicas.
+
+Tomando como exemplo as propriedades básicas de um veículo, podemos definir subtipos mais específicos, tais como carros, caminhões e motocicletas. Dentre os atributos que um veículo pode possuir, destacam-se a cor, o modelo e o ano de fabricação.
+
+Veículo é a classe genérica, enquanto carros, caminhões e motos são classes mais específicas que herdam ou se baseiam na classe veículo para obterem atributos e métodos comuns.
+
+### Herança
+
+Através da herança, é possível definir uma classe em termos de outra classe já existente, utilizando os processos de generalização e especificação. Essa relação é estabelecida através do mecanismo de subtipagem, onde o subtipo é mais específico que o supertipo e possui `todos os atributos do supertipo`, além de seus próprios atributos específicos. Ou seja, ela implementa a relação “é um tipo de”, ou “é um” (carro é um tipo de veículo, cachorro é um tipo de animal...)
+
+
+A herança possibilita o reuso do comportamento de uma classe na definição de outra, permitindo a criação de novas classes mais específicas, conhecidas como subclasses, classes derivadas ou classes filhas, que herdam todas as características de sua classe base, também chamada de superclasse, classe pai ou classe genérica. As subclasses podem adicionar novas características à sua implementação.
+
+Por exemplo, podemos dizer que um professor é uma pessoa, ou que um ônibus é um veículo, estabelecendo a relação de herança entre as classes. No entanto, a herança múltipla de classes é uma propriedade que não é permitida na linguagem C#, uma vez que pode causar diversos problemas na programação orientada a objetos.
+
+>>Você deve favorecer composição sobre herança, ou seja, é melhor você atingir a reusabilidade de código a partir da composição do que pela herança.
+
+```csharp
+class Pessoa // classe base
+{
+
+}
+
+class Professor : Pessoa  // classe Professor é um tipo de Pessoa
+{
+
+}
+
+class Aluno : Pessoa  // classe Aluno é um tipo de Pessoa
+{
+
+}
+```
