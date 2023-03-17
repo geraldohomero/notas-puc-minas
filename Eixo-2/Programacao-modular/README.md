@@ -436,3 +436,26 @@ Namespaces, ou espaço de nomes, é um recurso que permite agrupar classes relac
 Por convenção, quando se deseja **criar** seu próprio **namespace**, todas as **classes** de um mesmo namespace devem ser **armazenadas** na **mesma pasta**, em arquivos separados onde **cada arquivo** possui o mesmo **nome da classe** nele contido. O **nome da pasta** deve ser o mesmo **nome do namespace**.
 
 ![Namespaces](./img/namespaces.png)
+
+E os outros módulos poderão utilizar outros namespaces com a cláusula `using`
+
+## Partial Classes
+
+Por padrão, uma classe deve ser implementada em um único arquivo em C# e na maioria das linguagens de programação modernas. Existe até um princípio de qualidade de código que sugere que uma classe não deve ter mais de aproximadamente 100 linhas, ou deve ser dividida em várias classes menores
+
+A possibilidade de se criar uma classe parcial, ou partial class, em mais de um arquivo é uma funcionalidade interessante em C#. Com isso, é possível organizar melhor o conteúdo de classes que possuem um grande número de membros e métodos. Essa técnica é especialmente útil na criação de interfaces gráficas, onde há muitos códigos gerados automaticamente pelo compilador. No contexto de projetos do Windows Forms, por exemplo, as classes parciais permitem expor apenas as estruturas que precisam ser manipuladas pelos desenvolvedores, enquanto os códigos complexos gerados automaticamente são mantidos em outros arquivos para maior organização do projeto.
+
+
+```csharp
+public partial class ClasseParcial {
+  
+}
+```
+
+Pode ser desenvolvido em vários arquivos, como por exemplo:
+
+ClasseParcial1.cs
+
+ClasseParcial2.cs
+
+>>Classes parciais tem de estar dentro de um mesmo namespace
