@@ -291,6 +291,7 @@ class MainClass
   }
 }
 ```
+# Encapsulamento
 ## Princípio da ocultação da informação
 
 Encapsulamento e o princípio da caixa preta: Um módulo deve consistir de um conjunto de comandos com uma função bem definida, e o mais independente possível em relação ao resto do sistema.
@@ -469,7 +470,7 @@ Tomando como exemplo as propriedades básicas de um veículo, podemos definir su
 
 Veículo é a classe genérica, enquanto carros, caminhões e motos são classes mais específicas que herdam ou se baseiam na classe veículo para obterem atributos e métodos comuns.
 
-### Herança
+# Herança
 
 Através da herança, é possível definir uma classe em termos de outra classe já existente, utilizando os processos de generalização e especificação. Essa relação é estabelecida através do mecanismo de subtipagem, onde o subtipo é mais específico que o supertipo e possui `todos os atributos do supertipo`, além de seus próprios atributos específicos. Ou seja, ela implementa a relação “é um tipo de”, ou “é um” (carro é um tipo de veículo, cachorro é um tipo de animal...)
 
@@ -502,3 +503,42 @@ class Aluno : Pessoa  // classe Aluno é um tipo de Pessoa
 Uma das etapas para construir um objeto de uma classe filha é construir os elementos herdados da classe pai. Para garantir que o sistema seja robusto e correto, o método construtor da classe pai deve ser executado antes do construtor da classe filha.
 
 Se a classe filha não definir um construtor próprio, o construtor padrão sem parâmetros da classe pai será executado automaticamente. No entanto, é possível declarar um construtor na classe filha que inicialize tanto os atributos da classe filha quanto os atributos herdados da classe pai.Os dois pontos (`:`) seguido da palavra-chave base e a lista de parâmetros invocam o construtor da classe pai. 
+
+# Polimorfismo
+
+## Sobrepor métodos e ocultando campos
+
+Ao declarar um atributo ou método com a palavra-chave `virtual`, é possível implementá-lo na classe pai ou sobrepor na classe filha. Quando um método é sobreposto, ele é implementado novamente na classe filha com o mesmo nome e assinatura, substituindo o comportamento original da classe pai.
+
+Para realizar a sobreposição, a declaração do método na classe filha deve incluir a palavra-chave `override` e, se desejado, pode utilizar a implementação herdada da classe pai através da palavra-chave `base`.
+
+Caso a classe filha declare um campo com o mesmo nome do campo herdado da classe pai, ocorrerá ocultação do campo original. Nesse caso, a linguagem C# solicitará que a palavra-chave `new` seja adicionada à nova declaração do atributo para indicar que o ocultamento não foi um acidente.
+
+>Esses são conceitos importantes do polimorfismo em C#, que permitem que as classes filhas possam ter comportamentos diferentes dos seus pais e ainda assim sejam tratadas como objetos da mesma classe em determinadas situações, aumentando a flexibilidade e reutilização de código.
+
+O exemplo a seguir mostra uma classe pai com um atributo e um método, e uma classe filha que oculta o atributo e sobrepõe o método.
+
+```csharp
+using System;
+class SuperMostra
+{
+  public string str = "Super String";
+
+  public virtual void mostra()
+  {
+    Console.WriteLine("Super mostra!");
+  }
+}
+class EstendeMostra : SuperMostra
+{
+  public new string str = "Estende String";
+
+  public override void mostra()
+  {
+    Console.WriteLine("---");
+    base.mostra();
+    Console.WriteLine("Estende mostra!");
+    Console.WriteLine("---");
+  }
+}
+```
