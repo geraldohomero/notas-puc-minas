@@ -11,24 +11,24 @@ namespace ORM_Exemplo
     {
         [Key]
         public int Id { get; set; }
-        public string Descricao { get; set; }
-        public ICollection<Filme> Filme { get; set; }
+        public string? Descricao { get; set; }
+        public ICollection<Filme>? Filme { get; set; }
     }
 
     public class Filme
     {
         [Key]
         public int Id { get; set; }
-        public string Titulo { get; set; }
+        public string? Titulo { get; set; }
         public int GeneroId { get; set; }
         [ForeignKey("GeneroId")]
-        public Genero Genero { get; set; }
+        public Genero? Genero { get; set; }
     }
 
     public class ApplicationContext : DbContext
     {
-        public DbSet<Genero> Genero { get; set; }
-        public DbSet<Filme> Filme { get; set; }
+        public DbSet<Genero>? Genero { get; set; }
+        public DbSet<Filme>? Filme { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
