@@ -21,7 +21,7 @@ namespace ORM_Exemplo
         public int Id { get; set; }
         public string Titulo { get; set; }
         public int GeneroId { get; set; }
-        [ForeignKeyAttribute("GeneroId")]
+        [ForeignKey("GeneroId")]
         public Genero Genero { get; set; }
     }
 
@@ -32,7 +32,7 @@ namespace ORM_Exemplo
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=./SQLEXPRESS;Database=orm;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=orm;Trusted_Connection=True;");
         }
 
     
